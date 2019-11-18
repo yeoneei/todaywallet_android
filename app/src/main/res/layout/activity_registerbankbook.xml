@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_centerInParent="true">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shinhan"
+        android:layout_marginRight="15dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="신한은행 계좌를 \n등록해주세요"
+        android:layout_gravity="center_vertical"/>
+</LinearLayout>
+<Button
+    android:layout_marginTop="15dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="다음 >"
+    android:textSize="22dp"
+    android:background="#00ff0000"
+    style="?android:attr/borderlessButtonStyle"
+    android:layout_gravity="right"
+    android:textStyle="bold"
+    android:textColor="#707070"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginBottom="20dp"
+    android:layout_marginRight="20dp"
+    android:id="@+id/btn_register1_next"
+    />
+</RelativeLayout>

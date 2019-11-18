@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:background="#FFFFFF">
+    <View
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"/>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="3"
+                android:src="@drawable/logo"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:orientation="vertical"
+                android:weightSum="5"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/main_phase"
+                    android:gravity="center_horizontal|bottom"
+                    android:textColor="@color/main"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:gravity="center_horizontal"
+                    android:text="@string/app_name_kor"
+                    android:textSize="110px"
+                    android:textStyle="bold"
+                    android:textColor="@color/main"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/roundgray"
+            android:hint="이메일을 입력해 주세요"
+            android:textSize="17dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/lignt_gray"
+            android:paddingStart="30dp"
+            android:id="@+id/edit_text_sign_up_email"
+            />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/roundgray"
+            android:hint="닉네임을 입력해 주세요"
+            android:textSize="17dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/lignt_gray"
+            android:paddingStart="30dp"
+            android:id="@+id/edit_text_sign_up_nick_name"
+            />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/roundgray"
+            android:hint="비밀번호를 입력해 주세요"
+            android:textSize="17dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/lignt_gray"
+            android:paddingStart="30dp"
+            android:id="@+id/edit_text_sign_up_pw"
+            />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/roundgray"
+            android:hint="비밀번호를 확인해 주세요"
+            android:textSize="17dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/lignt_gray"
+            android:paddingStart="30dp"
+            android:id="@+id/edit_text_sign_up_re_pw"
+            />
+        <EditText
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/roundgray"
+            android:hint="핸드폰 번호를 입력해 주세요"
+            android:textSize="17dp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/lignt_gray"
+            android:paddingStart="30dp"
+            android:id="@+id/edit_text_sign_up_phone"
+            />
+        <Button
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/roundallblue"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:textColorHint="@color/lignt_gray"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:id="@+id/btn_sign_up"
+            />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+</LinearLayout>
