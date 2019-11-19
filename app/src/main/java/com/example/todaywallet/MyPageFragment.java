@@ -1,4 +1,4 @@
-package com.example.todaywallet.main;
+package com.example.todaywallet;
 
 
 
