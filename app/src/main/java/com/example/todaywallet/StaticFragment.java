@@ -53,12 +53,14 @@ public class StaticFragment extends Fragment {
 
         ArrayList<PieEntry> yValues = new ArrayList<PieEntry>();
 
-        yValues.add(new PieEntry(23f,"Japen"));
-        yValues.add(new PieEntry(18f,"USA"));
-        yValues.add(new PieEntry(9f,"UK"));
-        yValues.add(new PieEntry(15f,"India"));
-        yValues.add(new PieEntry(5f,"Russia"));
-        yValues.add(new PieEntry(30f,"Korea"));
+        yValues.add(new PieEntry(23f,"식비"));
+        yValues.add(new PieEntry(18f,"영화"));
+        yValues.add(new PieEntry(9f,"기타"));
+        yValues.add(new PieEntry(15f,"택시비"));
+        yValues.add(new PieEntry(5f,"화장품"));
+        yValues.add(new PieEntry(30f,"옷"));
+
+
 
 
         pieChart.animateY(1000, Easing.EaseInOutCubic);
@@ -66,17 +68,19 @@ public class StaticFragment extends Fragment {
 
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(12f);
-        int [] color = {Color.parseColor("#FD6381"),Color.parseColor("#FAF57D"),
-            Color.parseColor("#C9F8A7"),Color.parseColor("#F4F3F3"),Color.parseColor("#BCE0FD")
+        int [] color = {Color.parseColor("#636FFD"),Color.parseColor("#B4BAD6"),
+            Color.parseColor("#A7F8F5"),Color.parseColor("#F1F9FF"),Color.parseColor("#BCE0FD")
             , Color.parseColor("#A1C3F2")};
 
         dataSet.setColors(ColorTemplate.createColors(color));
+        pieChart.setEntryLabelColor(Color.BLACK);
 
 
         PieData data = new PieData((dataSet));
         data.setValueTextSize(12f);
         data.setValueTextColor(Color.YELLOW);
         pieChart.setData(data);
+
         pieChart.getLegend().setEnabled(false);
 
 

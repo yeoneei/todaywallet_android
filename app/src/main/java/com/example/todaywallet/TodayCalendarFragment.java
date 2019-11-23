@@ -65,9 +65,7 @@ public class TodayCalendarFragment extends Fragment {
         }
 
 
-
-
-        todayCalendarAdapter = new TodayCalendarAdapter(mDateList,clickDay,lastDay,getContext());
+        todayCalendarAdapter = new TodayCalendarAdapter(mDateList,today, clickDay,lastDay,getContext());
         recyclerView.setAdapter(todayCalendarAdapter);
         recyclerView.scrollToPosition((mDateList.size()/2)-3);
 

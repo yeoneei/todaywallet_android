@@ -1,7 +1,7 @@
 package com.example.todaywallet.retrofit.client;
 
-import com.example.todaywallet.retrofit.client.service.AuthService;
 import com.example.todaywallet.retrofit.client.service.BankingService;
+import com.example.todaywallet.retrofit.client.service.CardService;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -13,14 +13,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class BankClient {
+public class CardClient {
     private static final String PROD = ApiShinHan.SHIN_HAN_BANK_API;
 
-    private static BankClient instance;
+    private static CardClient instance;
     private MyInterceptor interceptor;
 
     private int userId;
-    private final BankingService bankingService;
+    private final CardService cardService;
 
     /*
     private final AuthService authService;
@@ -30,7 +30,7 @@ public class BankClient {
 
      */
 
-    public BankClient() {
+    public CardClient() {
         interceptor = new MyInterceptor();
 
         Gson gson = new GsonBuilder()
@@ -44,12 +44,12 @@ public class BankClient {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(String.format("http://%s:8080/", PROD))
+                .baseUrl(String.format("http://%s:8081/", PROD))
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttp)
                 .build();
 
-        bankingService = retrofit.create(BankingService.class);
+        cardService = retrofit.create(CardService.class);
         /*
         authService = retrofit.create(AuthService.class);
         assetService = retrofit.create(AssetService.class);
@@ -59,19 +59,19 @@ public class BankClient {
 
     }
 
-    public static BankClient getInstance() {
+    public static CardClient getInstance() {
         if (instance == null) {
-            synchronized (BankClient.class) {
+            synchronized (CardClient.class) {
                 if (instance == null) {
-                    instance = new BankClient();
+                    instance = new CardClient();
                 }
             }
         }
         return instance;
     }
 
-    public BankingService getBankingService() {
-        return bankingService;
+    public CardService getCardService() {
+        return cardService;
     }
 
     public void setToken(String token){

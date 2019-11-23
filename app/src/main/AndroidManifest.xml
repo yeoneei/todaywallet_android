@@ -28,6 +28,7 @@
         <activity android:name=".register.RegisterBookActivity"/>
         <activity android:name=".register.RegisterBookWon"/>
         <activity android:name=".CalendarSettingActivity"/>
+        <activity android:name=".register.RegisterBookComplete"/>
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -33,7 +33,6 @@
             android:gravity="center"
             android:textSize="40dp"
             android:maxLength="1"
-            android:nextFocusDown="@id/edit_auth3"
             android:background="@drawable/roundeditinput"/>
         <EditText
             android:layout_width="50dp"
@@ -43,18 +42,34 @@
             android:id="@+id/edit_auth3"
             android:gravity="center"
             android:maxLength="1"
-            android:nextFocusDown="@id/edit_auth4"
             android:background="@drawable/roundeditinput"/>
         <EditText
             android:layout_width="50dp"
             android:layout_height="80dp"
-            android:maxLength="1"
+            android:textSize="40dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/edit_auth4"
             android:gravity="center"
-            android:imeOptions="actionDone"
+            android:maxLength="1"
             android:background="@drawable/roundeditinput"/>
 
     </LinearLayout>
-
-</RelativeLayout>
+        <Button
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:textSize="22dp"
+            android:background="#00ff0000"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_gravity="right"
+            android:textStyle="bold"
+            android:textColor="#707070"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btn_won_auth_next"
+            />
+    </RelativeLayout>
 </layout>

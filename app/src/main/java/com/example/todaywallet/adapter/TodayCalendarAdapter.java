@@ -29,10 +29,12 @@ public class TodayCalendarAdapter extends RecyclerView.Adapter  {
 
     private int today;
     private int lastDay;
+    private int click;
 
-    public TodayCalendarAdapter(List<Integer> mDateList, int today, int lastDay, Context context) {
+    public TodayCalendarAdapter(List<Integer> mDateList, int today,int click, int lastDay, Context context) {
         this.mDateList = mDateList;
         this.today = today;
+        this.click = click;
         this.lastDay = lastDay;
         this.mContext = context;
     }
@@ -62,9 +64,9 @@ public class TodayCalendarAdapter extends RecyclerView.Adapter  {
 
         if(item<=0 || item >lastDay){
             return EMPTY;
-        }else if(item == today){
+        }else if(item == click){
             return TODAY;
-        }else if(item < today){
+        }else if(item <= today){
             return BEFORE;
         }
         return AFTER;

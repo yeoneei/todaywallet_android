@@ -35,8 +35,9 @@ public class TodayCalendarTodayViewHolder extends RecyclerView.ViewHolder {// ìš
             public void onClick(View v) {
 
                 todayCalendarBelowFragment = new TodayCalendarBelowFragment();
-                Bundle bundle = new Bundle(1);
+                Bundle bundle = new Bundle(2);
                 bundle.putString("type","1");
+                bundle.putString("today",itemDay.getText().toString());
                 todayCalendarBelowFragment.setArguments(bundle);
                 FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
                 FragmentTransaction transaction =fragmentManager.beginTransaction();
