@@ -17,6 +17,7 @@ public class RegisterBookActivity extends AppCompatActivity {
 
     ActivityRegisterbankbook2Binding activityRegisterbankbook2Binding;
     Button btnNext;
+    Button btnCheck;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,14 @@ public class RegisterBookActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RegisterBookActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        btnCheck = activityRegisterbankbook2Binding.btnRegister2CheckBankNumber;
+        btnCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterBookActivity.this,RegisterBookWon.class));
                 finish();
             }
         });

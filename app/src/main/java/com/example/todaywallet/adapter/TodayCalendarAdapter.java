@@ -23,16 +23,18 @@ public class TodayCalendarAdapter extends RecyclerView.Adapter  {
     private int BEFORE=2;
     private int AFTER=3;
     private int EMPTY=0;
+    private Context mContext;
 
     private List<Integer> mDateList;
 
     private int today;
     private int lastDay;
 
-    public TodayCalendarAdapter(List<Integer> mDateList, int today, int lastDay) {
+    public TodayCalendarAdapter(List<Integer> mDateList, int today, int lastDay, Context context) {
         this.mDateList = mDateList;
         this.today = today;
         this.lastDay = lastDay;
+        this.mContext = context;
     }
 
 
@@ -79,13 +81,13 @@ public class TodayCalendarAdapter extends RecyclerView.Adapter  {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         if (viewType == AFTER) {
-            return new TodayCalendarAfterDayViewHolder(inflater.inflate(R.layout.item_today_calendar_after, parent, false));
+            return new TodayCalendarAfterDayViewHolder(inflater.inflate(R.layout.item_today_calendar_after, parent, false),mContext);
         }else if(viewType == BEFORE){
-            return new TodayCalendarBeforeDayViewHolder(inflater.inflate(R.layout.item_today_calendar_before, parent, false));
+            return new TodayCalendarBeforeDayViewHolder(inflater.inflate(R.layout.item_today_calendar_before, parent, false),mContext);
         }else if(viewType == EMPTY){
-            return new TodayCalendarEmptyDayViewHolder(inflater.inflate(R.layout.item_today_calendar_empty,parent,false));
+            return new TodayCalendarEmptyDayViewHolder(inflater.inflate(R.layout.item_today_calendar_empty,parent,false),mContext);
         }
-        return new TodayCalendarTodayViewHolder(inflater.inflate(R.layout.item_today_calendar_today, parent, false));
+        return new TodayCalendarTodayViewHolder(inflater.inflate(R.layout.item_today_calendar_today, parent, false),mContext);
     }
 
     @Override

@@ -32,7 +32,7 @@ public class TodayCalendarFragment extends Fragment {
     int clickDay;
     int month;
     int lastDay;
-
+    int today;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,23 +47,27 @@ public class TodayCalendarFragment extends Fragment {
         Log.i("click",getArguments().getString("clickDay")+"");
         Calendar cal = Calendar.getInstance();
         month = cal.get(Calendar.MONTH)+1;
+        today = cal.get(Calendar.DATE);
 
         if(month ==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
             lastDay = 31;
         }else{
             lastDay= 30;
         }
-
         mDateList = new ArrayList<Integer>();
-        for(int i=clickDay-6; i<clickDay;i++){
+
+        for (int i = clickDay - 6; i < clickDay; i++) {
             mDateList.add(i);
         }
         mDateList.add(clickDay);
-        for(int i=clickDay+1; i<clickDay+6;i++){
+        for (int i = clickDay + 1; i < clickDay + 6; i++) {
             mDateList.add(i);
         }
 
-        todayCalendarAdapter = new TodayCalendarAdapter(mDateList,clickDay,lastDay);
+
+
+
+        todayCalendarAdapter = new TodayCalendarAdapter(mDateList,clickDay,lastDay,getContext());
         recyclerView.setAdapter(todayCalendarAdapter);
         recyclerView.scrollToPosition((mDateList.size()/2)-3);
 

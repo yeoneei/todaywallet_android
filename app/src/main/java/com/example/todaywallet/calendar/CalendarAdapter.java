@@ -69,9 +69,9 @@ public class CalendarAdapter extends RecyclerView.Adapter {
         }else if(viewType == DAY_TYPE){
             return new DayViewHolder(inflater.inflate(R.layout.item_today, parent, false),mContext);
         }else if(viewType == AFTER_TYPE){
-            return new AfterViewHolder(inflater.inflate(R.layout.item_lock_day, parent, false));
+            return new AfterViewHolder(inflater.inflate(R.layout.item_lock_day, parent, false),mContext);
         }else if(viewType == BEFORE_TYPE){
-            return new BeforeDayViewHolder(inflater.inflate(R.layout.item_unlock_day,parent,false));
+            return new BeforeDayViewHolder(inflater.inflate(R.layout.item_unlock_day,parent,false),mContext);
         }
         return new EmptyViewHolder(inflater.inflate(R.layout.item_empty_day, parent, false));
 

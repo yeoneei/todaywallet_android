@@ -30,7 +30,7 @@ class DayViewHolder extends RecyclerView.ViewHolder {// 요일 입 ViewHolder
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("clicktest","hh");
+
                 TodayCalendarFragment todayCalendarFragment = new TodayCalendarFragment();
                 Bundle bundle = new Bundle(1);
                 bundle.putString("clickDay",itemDay.getText().toString());

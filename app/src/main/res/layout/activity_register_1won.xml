@@ -1,0 +1,60 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:id="@+id/img_auth"
+        android:layout_height="wrap_content"
+        android:src="@drawable/auth"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/img_auth">
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:id="@+id/edit_auth1"
+            android:layout_marginRight="20dp"
+            android:maxLength="1"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:nextFocusUp="@id/edit_auth2"
+            android:background="@drawable/roundeditinput"/>
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/edit_auth2"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:maxLength="1"
+            android:nextFocusDown="@id/edit_auth3"
+            android:background="@drawable/roundeditinput"/>
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:textSize="40dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/edit_auth3"
+            android:gravity="center"
+            android:maxLength="1"
+            android:nextFocusDown="@id/edit_auth4"
+            android:background="@drawable/roundeditinput"/>
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:maxLength="1"
+            android:id="@+id/edit_auth4"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:background="@drawable/roundeditinput"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+</layout>

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="300dp"
-    android:layout_height="320dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    android:orientation="vertical" android:layout_width="330dp"
+    android:layout_height="380dp"
     android:background="#FFFFFF">
+
     <ImageView
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:src="@drawable/bear"/>
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_bear" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -68,22 +71,23 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:id="@+id/btn"
+
 
         android:layout_alignParentBottom="true"
         android:weightSum="2">
+
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="네"
-
             android:gravity="center"
             android:layout_gravity="center"
             android:textColor="#707070"
             android:id="@+id/btn_bear_yes"
-            android:textSize="20dp"/>
+            android:textSize="17dp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -93,7 +97,8 @@
             android:id="@+id/btn_bear_no"
             android:layout_gravity="center"
             android:textColor="#707070"
-            android:textSize="20dp"/>
+            android:textSize="17dp"/>
 
     </LinearLayout>
 </RelativeLayout>
+</layout>

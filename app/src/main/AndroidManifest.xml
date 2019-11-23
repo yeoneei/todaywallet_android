@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.todaywallet">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +23,10 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SignUpActivity"/>
+        <activity android:name=".dialog.BearDialog" android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
         <activity android:name=".register.RegisterActivity"/>
         <activity android:name=".register.RegisterBookActivity"/>
+        <activity android:name=".register.RegisterBookWon"/>
         <activity android:name=".CalendarSettingActivity"/>
         <activity android:name=".Splash">
             <intent-filter>
