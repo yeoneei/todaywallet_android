@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center">
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="지난 통계"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="#FFFFFF"
+                android:id="@+id/btn_static_right"
+                android:background="@drawable/fullgrayrightstatic"/>
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="미래통계"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/lignt_gray"
+                android:id="@+id/btn_static_left"
+                android:background="@drawable/roundgrayleftstatic"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="yeoni"
+                android:id="@+id/tv_future_satic_user_name"
+                android:textColor="#5D5B5B"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="님의 다음달 통계는"
+                android:textSize="20dp"
+                android:textColor="#A09D9D"
+                />
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bar_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_margin="16dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="일 것으로 예됩니다"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:textSize="20dp"
+                android:textColor="#A09D9D"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ViewFlipper
+                android:layout_width="350dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:id="@+id/vf_future_static_ad"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

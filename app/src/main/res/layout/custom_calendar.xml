@@ -18,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Sun"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:textColor="#A09D9D"/>
             <TextView
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Mon"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:textColor="#A09D9D"/>
             <TextView
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Tru"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:textColor="#A09D9D"/>
             <TextView
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Wen"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:textColor="#A09D9D"/>
             <TextView

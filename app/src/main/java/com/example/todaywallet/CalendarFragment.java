@@ -1,7 +1,6 @@
 package com.example.todaywallet;
 
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,21 +9,16 @@ import android.widget.TextView;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.todaywallet.calendar.CalendarAdapter;
 import com.example.todaywallet.calendar.Keys;
-import com.example.todaywallet.databinding.CustomCalendarBinding;
 import com.example.todaywallet.databinding.FragmentCalendarBinding;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class CalendarFragment extends Fragment {
 
@@ -40,6 +34,7 @@ public class CalendarFragment extends Fragment {
     private int weekLastDay;
     private ArrayList<Object> mDateList;
     TextView txtYear;
+    TextView txtMonth;
 
 
     public int mCenterPosition;
@@ -53,21 +48,54 @@ public class CalendarFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
-        fragmentCalendarBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_calendar,container,false);
-
         ViewGroup rootView =(ViewGroup)inflater.inflate(R.layout.fragment_calendar, container, false);
+        fragmentCalendarBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_calendar,container,false);
+        Calendar cal = Calendar.getInstance();
+        today = cal.get(Calendar.DATE);
+        year = cal.get(Calendar.YEAR);
+        month = cal.get(Calendar.MONTH);
+
+        Log.i("year",year+"");
+        txtYear =  fragmentCalendarBinding.txtCalendarYear;
+        txtYear.setText(String.valueOf(year));
+
+        fragmentCalendarBinding.txtFreeCount.setText("1234");
+
+
+        txtMonth =fragmentCalendarBinding.txtCalendarMonth;
+        if(month==0){
+            txtMonth.setText("January");
+        }else if(month==1){
+            txtMonth.setText("February");
+        }else if(month==2){
+            txtMonth.setText("March");
+        }else if(month==3){
+            txtMonth.setText("April");
+        }else if(month==4){
+            txtMonth.setText("May");
+        }else if(month==5){
+            txtMonth.setText("June");
+        }else if(month==6){
+            txtMonth.setText("July");
+        }else if(month==7){
+            txtMonth.setText("August");
+        }else if(month==8){
+            txtMonth.setText("September");
+        }else if(month==9){
+            txtMonth.setText("October");
+        }else if(month==10){
+            txtMonth.setText("November");
+        }else if(month==11){
+            txtMonth.setText("December");
+        }
+
+
 
         initView(rootView);
-
         initSet();
-
         setRecycler();
 
         return rootView;
-
-
     }
 
     public void initView(View v){
@@ -95,12 +123,8 @@ public class CalendarFragment extends Fragment {
 
         manager = new StaggeredGridLayoutManager(7, StaggeredGridLayoutManager.VERTICAL);
 
-        Calendar cal = Calendar.getInstance();
-        today = cal.get(Calendar.DATE);
-        year = cal.get(Calendar.YEAR);
-        month = cal.get(Calendar.MONTH);
 
-        mAdapter = new CalendarAdapter(mCalendarList,today);
+        mAdapter = new CalendarAdapter(mCalendarList,today,getActivity());
 
         mAdapter.setCalendarList(mCalendarList);
         recyclerView.setLayoutManager(manager);
@@ -115,35 +139,33 @@ public class CalendarFragment extends Fragment {
 
         ArrayList<Object> calendarList = new ArrayList<>();
 
-        for (int i = -300; i < 300; i++) {
-            try {
-                GregorianCalendar calendar = new GregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + i, 1, 0, 0, 0);
-                if (i == 0) {
-                    mCenterPosition = calendarList.size();
-                }
-
-                // 타이틀인듯
-                calendarList.add(calendar.getTimeInMillis());
-
-                int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1; //해당 월에 시작하는 요일 -1 을 하면 빈칸을 구할 수 있겠죠 ?
-                int max = calendar.getActualMaximum(Calendar.DAY_OF_MONTH); // 해당 월에 마지막 요일
-
-                // EMPTY 생성
-                for (int j = 0; j < dayOfWeek; j++) {
-                    calendarList.add(Keys.EMPTY);
-                }
-                for (int j = 1; j <= max; j++) {
-                    calendarList.add(new GregorianCalendar(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), j));
-                }
-
-                // TODO : 결과값 넣을떄 여기다하면될듯
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        GregorianCalendar gregorianCalendar = new GregorianCalendar(year, month,1);
+        int firstDay = gregorianCalendar.get(Calendar.DAY_OF_WEEK);
+        int lastDay;
+        for(int i=1; i<firstDay;i++){
+            calendarList.add(Keys.EMPTY);
         }
+        month++;
+        if(month ==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
+            for(int i=1; i<=31;i++){
+                calendarList.add(i);
+            }
+            lastDay = 31;
+        }else{
+            for(int i=1; i<=30;i++){
+                calendarList.add(i);
+            }
+            lastDay= 30;
+        }
+        gregorianCalendar = new GregorianCalendar(year, month,lastDay);
+
+        for(int i=gregorianCalendar.get(Calendar.DAY_OF_WEEK);i<=7;i++){
+            calendarList.add(Keys.EMPTY);
+        }
+
 
         mCalendarList = calendarList;
     }
+
 
 }

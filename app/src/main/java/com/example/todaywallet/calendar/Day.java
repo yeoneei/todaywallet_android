@@ -17,9 +17,7 @@ public class Day {
     }
 
     // TODO : day에 달력일값넣기
-    public void setCalendar(Calendar calendar){
-
-        day = DateUtil.getDate(calendar.getTimeInMillis(), DateUtil.DAY_FORMAT);
-
+    public void setCalendar(int day){
+        this.day = String.valueOf(day);
     }
 }

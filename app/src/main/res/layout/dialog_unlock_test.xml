@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="300dp"
+    android:layout_height="320dp"
+    android:background="#FFFFFF">
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bear"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B4AEAE"
+                android:text="무료 인출 횟수"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3회"
+                android:textColor="#012AF8"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B4AEAE"
+                android:text="남았습니다"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B4AEAE"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="정말로 "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인출"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#012AF8"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#B4AEAE"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="하실껀가요?"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/btn"
+
+        android:layout_alignParentBottom="true"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="네"
+
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#707070"
+            android:id="@+id/btn_bear_yes"
+            android:textSize="20dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="아니요"
+            android:gravity="center"
+            android:id="@+id/btn_bear_no"
+            android:layout_gravity="center"
+            android:textColor="#707070"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

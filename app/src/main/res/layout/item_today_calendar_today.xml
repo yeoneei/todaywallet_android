@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:id="@+id/layout_today"
+        android:background="@drawable/roundtoday"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_lock"
+            android:layout_toRightOf="@+id/txt_recycle_to_day_today"
+            android:visibility="invisible"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="70"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:id="@+id/txt_recycle_to_day_today"/>
+
+    </RelativeLayout>
+</layout>

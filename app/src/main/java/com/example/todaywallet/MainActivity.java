@@ -1,11 +1,8 @@
 package com.example.todaywallet;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 
 import android.graphics.Color;
@@ -13,14 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import com.example.todaywallet.calendar.CalendarAdapter;
-import com.example.todaywallet.databinding.CustomCalendarBinding;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 

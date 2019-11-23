@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="295dp"
+        android:layout_height="170dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/ic_bank"
+            android:src="@drawable/ic_bank_book"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_bank_check"
+            android:layout_marginTop="5dp"
+            android:layout_centerInParent="true"
+            android:textColor="#707070"
+            android:textSize="18dp"
+            android:layout_below="@+id/ic_bank"
+            android:text="등록되지 않은 계좌입니다"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"/>
+    </RelativeLayout>
+</layout>
