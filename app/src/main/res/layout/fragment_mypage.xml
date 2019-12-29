@@ -122,7 +122,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="280000"
+                        android:text="240000"
                         android:id="@+id/txt_mypage_month_money"
                         android:textSize="18dp"
                         android:textStyle="bold"
@@ -176,7 +176,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="280000"
+                        android:text="320000"
                         android:id="@+id/txt_mypage_bank_book_money"
                         android:textSize="18dp"
                         android:textStyle="bold"

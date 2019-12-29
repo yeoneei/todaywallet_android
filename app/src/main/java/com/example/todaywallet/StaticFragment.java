@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -34,12 +36,22 @@ import java.util.List;
 public class StaticFragment extends Fragment {
     FragmentStaticBinding fragmentStaticBinding;
     PieChart pieChart;
-
+    ViewFlipper viewFlipper;
+    int images[] = {
+            R.drawable.card1,
+            R.drawable.card2,
+            R.drawable.card3,
+    };
 
     Button btnLeft;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentStaticBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_static,container,false);
+        viewFlipper = fragmentStaticBinding.staticVf;
+
+        for(int imge : images) {
+            fllipperImages(imge);
+        }
 
         pieChart = fragmentStaticBinding.pieChart;
         pieChart.setUsePercentValues(true);
@@ -98,7 +110,17 @@ public class StaticFragment extends Fragment {
         });
         return fragmentStaticBinding.getRoot();
     }
+    public void fllipperImages(int image){
+        ImageView imageView = new ImageView(getContext());
+        imageView.setBackgroundResource(image);
 
+        viewFlipper.addView(imageView);      // 이미지 추가
+        viewFlipper.setFlipInterval(4000);       // 자동 이미지 슬라이드 딜레이시간(1000 당 1초)
+        viewFlipper.setAutoStart(true);          // 자동 시작 유무 설정
+
+        viewFlipper.setInAnimation(getContext(),android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(getContext(),android.R.anim.slide_out_right);
+    }
 
 
 

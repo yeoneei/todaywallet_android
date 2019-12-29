@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,6 +30,11 @@
                 android:background="@drawable/roundgrayleftstatic"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -51,11 +57,12 @@
                 android:textColor="#A09D9D"
                 />
         </LinearLayout>
-        <com.github.mikephil.charting.charts.BarChart
+        <ImageView
             android:id="@+id/bar_chart"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:gravity="center_vertical"
+            android:src="@drawable/future"
             android:orientation="horizontal"
             android:layout_margin="16dp" />
         <RelativeLayout
@@ -64,23 +71,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="일 것으로 예됩니다"
+                android:text="일 것으로 예상됩니다"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"
                 android:textColor="#A09D9D"
                 />
         </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-            <ViewFlipper
-                android:layout_width="350dp"
-                android:layout_height="130dp"
-                android:layout_gravity="center"
-                android:id="@+id/vf_future_static_ad"
-                />
         </LinearLayout>
 
     </LinearLayout>

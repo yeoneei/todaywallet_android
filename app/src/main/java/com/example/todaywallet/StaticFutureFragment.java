@@ -45,44 +45,41 @@ public class StaticFutureFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentFutureStaticBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_future_static,container,false);
-        viewFlipper = fragmentFutureStaticBinding.vfFutureStaticAd;
+        /*viewFlipper = fragmentFutureStaticBinding.vfFutureStaticAd;
 
         for(int imge : images) {
             fllipperImages(imge);
         }
+
         chart = fragmentFutureStaticBinding.barChart;
 
         ArrayList NoOfEmp = new ArrayList();
 
-        NoOfEmp.add(new BarEntry(945f, 0));
-        NoOfEmp.add(new BarEntry(1040f, 1));
-        NoOfEmp.add(new BarEntry(1133f, 2));
-        NoOfEmp.add(new BarEntry(1240f, 3));
-        NoOfEmp.add(new BarEntry(1369f, 4));
-        NoOfEmp.add(new BarEntry(1487f, 5));
-        NoOfEmp.add(new BarEntry(1501f, 6));
-        NoOfEmp.add(new BarEntry(1645f, 7));
-        NoOfEmp.add(new BarEntry(1578f, 8));
-        NoOfEmp.add(new BarEntry(1695f, 9));
+        NoOfEmp.add(new BarEntry(0f, 0));
+        NoOfEmp.add(new BarEntry(1f, 1));
+        NoOfEmp.add(new BarEntry(2f, 2));
+        NoOfEmp.add(new BarEntry(3f, 3));
+        NoOfEmp.add(new BarEntry(4f, 4));
 
         ArrayList year = new ArrayList();
 
-        year.add("2008");
-        year.add("2009");
-        year.add("2010");
-        year.add("2011");
-        year.add("2012");
-        year.add("2013");
-        year.add("2014");
-        year.add("2015");
-        year.add("2016");
-        year.add("2017");
+        year.add("식비");
+        year.add("영화");
+        year.add("옷");
+        year.add("택시비");
+        year.add("화장품");
+        year.add("담배");
+        year.add("기타");
 
         BarDataSet bardataset = new BarDataSet(NoOfEmp, "No Of Employee");
-        chart.animateY(5000);
+        chart.animateY(4000);
         BarData data = new BarData(bardataset);
+        bardataset.setBarBorderWidth(1f);
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+
         chart.setData(data);
+
+         */
 
 
 

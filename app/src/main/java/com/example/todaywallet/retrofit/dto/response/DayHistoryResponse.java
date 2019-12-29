@@ -1,10 +1,12 @@
 package com.example.todaywallet.retrofit.dto.response;
 
+import java.util.List;
+
 public class DayHistoryResponse {
     int status;
     Boolean success;
     String message;
-    Data[] data;
+    List<Data> data;
 
     public int getStatus() {
         return status;
@@ -30,11 +32,12 @@ public class DayHistoryResponse {
         this.message = message;
     }
 
-    public Data[] getData() {
+
+    public List<Data> getData() {
         return data;
     }
 
-    public void setData(Data[] data) {
+    public void setData(List<Data> data) {
         this.data = data;
     }
 

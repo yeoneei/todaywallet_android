@@ -21,9 +21,10 @@ public class TodayHistoryViewHolder extends RecyclerView.ViewHolder {
     TextView allPrice;
     int in;
 
-    public TodayHistoryViewHolder(@NonNull final View itemView){
+    public TodayHistoryViewHolder(@NonNull final View itemView,int in){
         super(itemView);
         initView(itemView);
+        this.in = in;
     }
 
     public void initView(View v){
@@ -37,8 +38,8 @@ public class TodayHistoryViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(DayHistoryResponse.Data dayHistoryResponse) {
         date.setText("2019/11/" + dayHistoryResponse.getDate() + " " + dayHistoryResponse.getTime());
-        name.setText(dayHistoryResponse.getName());
-        price2.setText(dayHistoryResponse.getPrice());
+        name.setText(dayHistoryResponse.getName()+"");
+        price2.setText(dayHistoryResponse.getPrice()+"");
         if (in == 0) {
             price1.setTextColor(Color.RED);
             price2.setTextColor(Color.RED);
@@ -46,8 +47,9 @@ public class TodayHistoryViewHolder extends RecyclerView.ViewHolder {
         if (in == 1) {
             price1.setTextColor(Color.BLUE);
             price2.setTextColor(Color.BLUE);
+            price1.setText("입금");
         }
-        allPrice.setText(dayHistoryResponse.getAnother());
+        allPrice.setText(dayHistoryResponse.getAnother()+"");
     }
 
 }
